@@ -236,7 +236,7 @@
                         <div class="title_full_size_news_on_right">Politics</div>
                         <div class="body_full_size_news_on_right">
                             <% for(i = 0; i < 2; i++){ %>
-                            <a href="">
+                            <a href="/article/<%= articlesListPolitics[i].nid %>">
                                 <div class="one_news_small_news">
                                     <div class="img_small_news" style="background-image: url('<%= mediaBaseUrl+articlesListPolitics[i].image_uri %>');">
                                     </div>
@@ -263,7 +263,7 @@
                         <div class="title_full_size_news_on_right">Business</div>
                         <div class="body_full_size_news_on_right">
                             <% for(i = 0; i < 2; i++){ %>
-                            <a href="">
+                            <a href="/article/<%= articlesListBusiness[i].nid %>">
                                 <div class="one_news_small_news">
                                     <div class="img_small_news" style="background-image: url('<%= mediaBaseUrl+articlesListBusiness[i].image_uri %>');">
                                     </div>

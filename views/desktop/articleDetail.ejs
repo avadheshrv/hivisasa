@@ -7,7 +7,7 @@
                         <div class="topic_article"><%= category %></div>
                         <div class="title_article"><%- articleDetail.title %></div>
                         <div class="time_autor_of_article">   
-                            <%= moment(articleDetail.publish_date).format('Do MMMM, YYYY') %> , By <a class="author_name" href="here_place_link_to_author"><%= articleDetail.writer.name %></a>
+                            <%= moment(articleDetail.publish_date).format('Do MMMM, YYYY') %> , By <a class="author_name" href="<%= articleDetail.writer.profile_uri %>"><%= articleDetail.writer.name %></a>
                         </div>	
                         <div class="article_body">
                                 <div class="socials_icons">
@@ -222,42 +222,41 @@
                                         </div>
                                 </div>
                         </div>
-                        <div class="text_for_authors">
-                                Anyone can write for us. We pay you weekly for each story we publish
+                        <div class="text_for_authors">Anyone can write for us. We pay you weekly for each story we publish
                         </div>
                         <a href="">
-                                <div class="bnt_write_us">
-                                        Write for us!
-                                </div>
+                            <div class="bnt_write_us">
+                                    Write for us!
+                            </div>
                         </a>
                 </div>
         <!-- End of the About author block -->
         <!-- Latest forum posts -->
                 <div class="block_latest_forum_posts">
                         <div class="title_ltst_forum_posts">
-                                Latest Forum Post
+                            Latest Forum Post
                         </div>
                         <div class="name_of_post_author">
-                                Ian Madege
+                            Ian Madege
                         </div>
                         <div class="topic_of_the_post">
-                                What do think about the upcoming hivisasa academy?
+                            What do think about the upcoming hivisasa academy?
                         </div>
                         <div class="reply_box">
-                                <div class="text_reply">
-                                        Following the academy can make you a better journalist and also earn extra cash!
+                            <div class="text_reply">
+                                Following the academy can make you a better journalist and also earn extra cash!
+                            </div>
+                            <div class="name_of_replier">
+                                Martin Kamau
+                            </div>
+                            <div class="num_comments">
+                                8 Comments
+                            </div>
+                            <a href="">
+                                <div class="btn_reply">
+                                        Reply
                                 </div>
-                                <div class="name_of_replier">
-                                        Martin Kamau
-                                </div>
-                                <div class="num_comments">
-                                        8 Comments
-                                </div>
-                                <a href="">
-                                        <div class="btn_reply">
-                                                Reply
-                                        </div>
-                                </a>
+                            </a>
                         </div>
                 </div>
         <!-- End of Latest forum posts -->

@@ -28,7 +28,7 @@
                     </a>
 
                     <div class="time_autor_of_article">
-                        <%= moment(categoryDetail[0].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= categoryDetail[0].writer.name %></a>
+                        <%= moment(categoryDetail[0].publish_date).fromNow() %> , By <a class="author_name" href="<%= categoryDetail[0].writer.profile_uri %>"><%= categoryDetail[0].writer.name %></a>
                     </div>				
                 </div>
                 <% } %>
@@ -45,7 +45,7 @@
                     </a>
 
                     <div class="time_autor_of_article">
-                        <%= moment(categoryDetail[1].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= categoryDetail[1].writer.name %></a>
+                        <%= moment(categoryDetail[1].publish_date).fromNow() %> , By <a class="author_name" href="<%= categoryDetail[1].writer.profile_uri %>"><%= categoryDetail[1].writer.name %></a>
                     </div>				
                 </div>
                 <% } %>
@@ -53,8 +53,6 @@
 
                 <% } %>
             </div>
-
-
             <div class="full_size_news_on_right">
                 <div class="title_full_size_news_on_right">
                     featured news
@@ -95,115 +93,18 @@
                             <li><a class="" href="#">»</a></li>
                         </ul>
                     </div>
-
-
                     <a href="">
                         <div class="text_all_politics">
                             All News »
                         </div>
                     </a>
-
                 </div>
             </div>	
-
         </div>
-
         <div class="extra_left_side_info">
             <!--Top news block-->
-            <div class="top_new_narrow_block_section">
-                <div class="title_full_size_news_on_right">
-                    Top News
-                </div>
-                <div class="tiny_images_content">					
-                    <a href="">					
-                        <div class="one_news_small_news">
-                            <div class="img_small_news" style="background: url('img/news12.jpg');">
-                            </div>								
-                            <div class="tiny_news_info">
-                                <div class="date_small_news">
-                                    30 Nov 3:43 PM
-                                </div>
-                                <div class="title_tiny_news">
-                                    Police urged to inspect traders to nab those indulging in illegal businesses along Lamu »
-                                </div>
-                            </div>								
-                        </div>						
-                    </a>		
-
-                    <a href="">					
-                        <div class="one_news_small_news">
-                            <div class="img_small_news" style="background: url('img/news12.jpg');">
-                            </div>								
-                            <div class="tiny_news_info">
-                                <div class="date_small_news">
-                                    30 Nov 3:43 PM
-                                </div>
-                                <div class="title_tiny_news">
-                                    Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
-                                </div>
-                            </div>								
-                        </div>						
-                    </a>	
-
-                    <a href="">					
-                        <div class="one_news_small_news">
-                            <div class="img_small_news" style="background: url('img/news12.jpg');">
-                            </div>								
-                            <div class="tiny_news_info">
-                                <div class="date_small_news">
-                                    30 Nov 3:43 PM
-                                </div>
-                                <div class="title_tiny_news">
-                                    Families affected by road construction to receive compensation »
-                                </div>
-                            </div>								
-                        </div>						
-                    </a>	
-
-                    <a href="">					
-                        <div class="one_news_small_news">
-                            <div class="img_small_news" style="background: url('img/news12.jpg');">
-                            </div>								
-                            <div class="tiny_news_info">
-                                <div class="date_small_news">
-                                    30 Nov 3:43 PM
-                                </div>
-                                <div class="title_tiny_news">
-                                    Ujenzi wa barabara katika shamba la Waitiki kuhamisha baadhi ya wakazi »
-                                </div>
-                            </div>								
-                        </div>						
-                    </a>	
-
-                    <a href="">					
-                        <div class="one_news_small_news">
-                            <div class="img_small_news" style="background: url('img/news12.jpg');">
-                            </div>								
-                            <div class="tiny_news_info">
-                                <div class="date_small_news">
-                                    30 Nov 3:43 PM
-                                </div>
-                                <div class="title_tiny_news">
-                                    Tuktuk moja yasakwa mjini Mombasa baada ya kuhusishwa na uhalifu »
-                                </div>
-                            </div>								
-                        </div>						
-                    </a>
-
-                    <a href="">
-                        <div class="text_all_politics">
-                            More news »
-                        </div>
-                    </a>
-
-
-                </div>
-            </div>
+            <% include partial/sidebarTopNews.ejs %>
             <!--End of Top News block-->
         </div>
-
-
-
     </div>
-
 </div>
