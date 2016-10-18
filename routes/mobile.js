@@ -1,14 +1,11 @@
-/* aa */
 var express = require('express');
 var router  = express.Router();
 var moment  = require('moment');
 var request = require('request');
-var app     = express();
-//var apiUrl  = app.get('apiUrl');
-var apiUrl  = 'http://api.hivisasa.com';
 
-//var mediaBaseUrl = app.get('mediaBaseUrl');
+var apiUrl  = 'http://api.hivisasa.com';
 var mediaBaseUrl = 'http://static-hivisasa-com.s3-accelerate.amazonaws.com';
+
 
 /* GET mobile home page. */
 router.get('/', function(req, res, next) {

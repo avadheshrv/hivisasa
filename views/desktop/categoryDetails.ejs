@@ -1,26 +1,18 @@
-<% layout('layout') -%>
-
+<% layout('../layoutDesktop') -%>
 <div class="wrap wrap_main_content">
-
     <div class="inner-wrap">
-
         <ul class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><a href="#"><%= county %></a></li>
+            <li><a href="/<%= county %>"><%= county %></a></li>
             <li><a href="#"><%= category %></a></li>
         </ul>
-
     </div>
-
     <div class="inner-wrap news_topic_section">
         <%= category %>		
     </div>
-
     <div class="inner-wrap" style="font-size: 0;">
         <div class="left_block_bigger_news">			
-
             <div class="three_line_news_block" style="margin-top: 0px;">
-
                 <%  if(categoryDetail.length > 0){ %>
 
                 <% if(categoryDetail[0]){ %>

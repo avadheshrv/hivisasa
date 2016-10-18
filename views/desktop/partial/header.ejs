@@ -5,18 +5,18 @@
             </div>
             <div class="dropdown">
                 <select name="county" class="dropdown_list county_selector">
-                    <option value="">Select county</option>
-                    <option value="national">National</option>
-                    <option value="garissa">Garissa</option>
-                    <option value="kiambu">Kiambu</option>
-                    <option value="kibera">Kibera</option>
-                    <option value="kisii">Kisii</option>
-                    <option value="kisumu">Kisumu</option>
-                    <option value="machakos">Machakos</option>
-                    <option value="mombasa">Mombasa</option>
-                    <option value="nakuru"> Nakuru</option>
-                    <option value="nyamira">Nyamira</option>
-                    <option value="uasin-gishu">Uasin-Gishu</option>
+                    <option <% if( county !== undefined && county == "" ){ %> selected="selected" <% } %> value="">Select county</option>
+                    <option <% if( county !== undefined && county == "national" ){ %> selected="selected" <% } %> value="national">National</option>
+                    <option <% if( county !== undefined && county == "garissa" ){ %> selected="selected" <% } %> value="garissa">Garissa</option>
+                    <option <% if( county !== undefined && county == "kiambu" ){ %> selected="selected" <% } %> value="kiambu">Kiambu</option>
+                    <option <% if( county !== undefined && county == "kibera" ){ %> selected="selected" <% } %> value="kibera">Kibera</option>
+                    <option <% if( county !== undefined && county == "kisii" ){ %> selected="selected" <% } %> value="kisii">Kisii</option>
+                    <option <% if( county !== undefined && county == "kisumu" ){ %> selected="selected" <% } %> value="kisumu">Kisumu</option>
+                    <option <% if( county !== undefined && county == "machakos" ){ %> selected="selected" <% } %> value="machakos">Machakos</option>
+                    <option <% if( county !== undefined && county == "mombasa" ){ %> selected="selected" <% } %> value="mombasa">Mombasa</option>
+                    <option <% if( county !== undefined && county == "nakuru" ){ %> selected="selected" <% } %> value="nakuru"> Nakuru</option>
+                    <option <% if( county !== undefined && county == "nyamira" ){ %> selected="selected" <% } %> value="nyamira">Nyamira</option>
+                    <option <% if( county !== undefined && county == "uasin-gishu" ){ %> selected="selected" <% } %> value="uasin-gishu">Uasin-Gishu</option>
                 </select>
             </div>
             <div class="btn_search">
@@ -56,6 +56,12 @@
 </div>
 <div class="wrap wrap_nav_topics">
     <div class="inner-wrap" style="overflow: visible;">
+        <% if( county !== undefined && county !== "" ){ %>
+        
+        <% }else{ %>
+        
+        <% } %>
+        
         <a href=""><div class="nav_item">All news</div></a>
         <a href=""><div class="nav_item">Politics</div></a>
         <a href=""><div class="nav_item">Opinions</div></a>
