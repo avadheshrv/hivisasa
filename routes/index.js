@@ -139,47 +139,28 @@ router.get('/articles/:county/:category', function(req, res){
         }else {
             categoryDetail = 'Not Found';
         }
-        console.log('categoryDetail: '+categoryDetail);
         
-        bind['mediaBaseUrl'] = mediaBaseUrl;
-        bind['county'] = county;
-        bind['category'] = category;
-        categoryDetail = JSON.parse(categoryDetail);
-        bind['categoryDetail'] = categoryDetail;
-        bind['moment'] = moment;
-        
-        return res.render('desktop/categoryDetails', bind);
-    });
-});
+        var options_top = {
+            uri : apiUrl+'/articles/'+county+'/'+category+'/top',
+            method : 'GET'
+        }; 
+        var apiResponseTop = '';
+        request(options_top, function (error, response, body){
+            if (!error && response.statusCode == 200) {
+                apiResponseTop = body; 
+                apiResponseTop = JSON.parse(apiResponseTop);
+            }
 
-/*
- *  Route to render all top articles from specific county and category
- */
-router.get('/articles/:county/:category/top', function(req, res){
-    var county = req.params.county;
-    var category = req.params.category;
-    
-    var options = {
-        uri : apiUrl+'/articles/'+county+'/'+category+'/top',
-        method : 'GET'
-    }; 
-    var categoryDetail = '';
-    var bind = {};
-    request(options, function (error, response, body){
-        if (!error && response.statusCode == 200) {
-            categoryDetail = body; 
-        }else {
-            categoryDetail = 'Not Found';
-        }
+            bind['mediaBaseUrl'] = mediaBaseUrl;
+            bind['county'] = county;
+            bind['category'] = category;
+            categoryDetail = JSON.parse(categoryDetail);
+            bind['categoryDetail'] = categoryDetail;
+            bind['moment'] = moment;
+            bind['topArticles'] = apiResponseTop;
 
-        bind['mediaBaseUrl']    = mediaBaseUrl;
-        bind['county']          = county;
-        bind['category']        = category;
-        categoryDetail          = JSON.parse(categoryDetail);
-        bind['categoryDetail']  = categoryDetail;
-        bind['moment']          = moment;
-        
-        return res.render('desktop/categoryDetails', bind);
+            return res.render('desktop/categoryDetails', bind);
+        });
     });
 });
 
@@ -213,14 +194,25 @@ router.get('/article/:county/:category/:articleId', function(req,res){
                 apiResponseRelated = body; 
                 apiResponseRelated = JSON.parse(apiResponseRelated);
             }
-            
-            res.render('desktop/articleDetail',{
-                'county':county,
-                'moment': moment,
-                'apiImgUrlPath':mediaBaseUrl,
-                'category':category,
-                'articleDetail':articleDetail,
-                'relatedArticles':apiResponseRelated
+            var options_top = {
+                uri : apiUrl+'/articles/'+articleDetail.county+'/'+articleDetail.category+'/top',
+                method : 'GET'
+            }; 
+            var apiResponseTop = '';
+            request(options_top, function (error, response, body){
+                if (!error && response.statusCode == 200) {
+                    apiResponseTop = body; 
+                    apiResponseTop = JSON.parse(apiResponseTop);
+                }
+                res.render('desktop/articleDetail',{
+                    'county':county,
+                    'moment': moment,
+                    'apiImgUrlPath':mediaBaseUrl,
+                    'category':category,
+                    'articleDetail':articleDetail,
+                    'relatedArticles':apiResponseRelated,
+                    'topArticles':apiResponseTop
+                });
             });
         });
     });
@@ -257,13 +249,26 @@ router.get('/article/:articleId', function(req,res){
                 apiResponseRelated = JSON.parse(apiResponseRelated);
             }
             
-            res.render('desktop/articleDetailDirect',{
-                'county':apiResponseRelated.county,
-                'moment': moment,
-                'apiImgUrlPath':mediaBaseUrl,
-                'category':apiResponseRelated.category,
-                'articleDetail':articleDetail,
-                'relatedArticles':apiResponseRelated
+            var options_top = {
+                uri : apiUrl+'/articles/'+articleDetail.county+'/'+articleDetail.category+'/top',
+                method : 'GET'
+            }; 
+            var apiResponseTop = '';
+            request(options_top, function (error, response, body){
+                if (!error && response.statusCode == 200) {
+                    apiResponseTop = body; 
+                    apiResponseTop = JSON.parse(apiResponseTop);
+                }
+                res.render('desktop/articleDetail',{
+                    'county':articleDetail.county,
+                    'moment': moment,
+                    'apiImgUrlPath':mediaBaseUrl,
+                    'category':articleDetail.category,
+                    'articleDetail':articleDetail,
+                    'relatedArticles':apiResponseRelated,
+                    'topArticles':apiResponseTop
+                });
+                
             });
         });
     });

@@ -4,22 +4,23 @@
         <div class="left_block_with_article">
             <div class="article_content">			
                 <div class="article">
-                        <div class="topic_article"><%= category %></div>
+                    
+                        <div class="topic_article"><%= category %> </div>
                         <div class="title_article"><%- articleDetail.title %></div>
                         <div class="time_autor_of_article">   
                             <%= moment(articleDetail.publish_date).format('Do MMMM, YYYY') %> , By <a class="author_name" href="here_place_link_to_author"><%= articleDetail.writer.name %></a>
                         </div>	
                         <div class="article_body">
                                 <div class="socials_icons">
-                                        <div class="social_icon" id="facebook_icon">
-                                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="social_icon" id="twitter_icon">
-                                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="social_icon" id="mail_icon">
-                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                        </div>
+                                    <div class="social_icon" id="facebook_icon">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="social_icon" id="twitter_icon">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="social_icon" id="mail_icon">
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             
                                 <div class="place_big_image_article" style="background:url('<%= apiImgUrlPath+articleDetail.image_uri %>');">

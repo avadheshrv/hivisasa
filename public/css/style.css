@@ -747,6 +747,7 @@ select:focus{
 .date_small_news{
 	font-size: 14px;
 	color: #808080;	
+        text-transform: capitalize;
 }
 
 .title_small_news{
