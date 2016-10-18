@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="pull-left col-lg-3 col-sm-4">
-                        <a href="/" class="logo"><img src="img/logo.png" alt="Logo"></a>
+                        <a href="/" class="logo"><img src="/img/logo.png" alt="Logo"></a>
                     </div>
                     <div class="pull-left col-lg-4 col-sm-5">
                         <form id="county" action="/mobile" method="post" class="form-horizontal select-county select-county-mobile">
@@ -57,15 +57,15 @@
             <div class="container">
                 <div class="row page-menu">
                     <ul class="col-lg-16 col-md-16 col-sm-16">
-                        <li><a href="/national"> All News</a></li>
-                        <li><a href="/national/politics">Politics</a></li>
-                        <li><a href="/national/opinion">Opinions</a></li>
-                        <li><a href="/national/business">Business</a></li>
-                        <li><a href="/national/agriculture">Agriculture</a></li>
-                        <li><a href="/national/crime">Crime</a></li>
-                        <li><a href="/national/sports">Sports</a></li>
-                        <li><a href="/national/entertainment">Entertainment</a></li>
-                        <li><a href="http://events.hivisasa.com/national/events">Events</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/all"> All News</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/politics">Politics</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/opinion">Opinions</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/business">Business</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/agriculture">Agriculture</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/crime">Crime</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/sports">Sports</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/entertainment">Entertainment</a></li>
+                        <li><a href="/mobile/articles/<%= county %>/events">Events</a></li>
                         <li id="more_menu_items">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -73,10 +73,10 @@
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="/national/education">Education</a></li>
-                                    <li><a href="/national/environment">Environment</a></li>
-                                    <li><a href="/national/transport">Transport</a></li>
-                                    <li><a href="/national/health">Health</a></li>
+                                    <li><a href="/mobile/articles/<%= county %>/education">Education</a></li>
+                                    <li><a href="/mobile/articles/<%= county %>/environment">Environment</a></li>
+                                    <li><a href="/mobile/articles/<%= county %>/transport">Transport</a></li>
+                                    <li><a href="/mobile/articles/<%= county %>/events">health</a></li>
                                 </ul>
                             </div>
                         </li>
