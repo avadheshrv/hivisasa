@@ -27,7 +27,7 @@
                 </div>
             </a>
             <div class="time_autor_of_article">
-                <%= moment(articlesList[0].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= articlesList[0].writer.name %></a>
+                <%= moment(articlesList[0].publish_date).fromNow() %> , By <a class="author_name" href="<%= articlesList[0].writer.profile_uri %>"><%= articlesList[0].writer.name %></a>
             </div>
         </div>
         <% } %>
@@ -43,7 +43,7 @@
             </a>
 
             <div class="time_autor_of_article">
-                <%= moment(articlesList[1].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= articlesList[1].writer.name %></a>
+                <%= moment(articlesList[1].publish_date).fromNow() %> , By <a class="author_name" href="<%= articlesList[1].writer.profile_uri %>"><%= articlesList[1].writer.name %></a>
             </div>
         </div>	
         <% } %>
@@ -61,7 +61,7 @@
                     </div>
                 </a>
                 <div class="time_autor_of_article">
-                    <%= moment(articlesList[i].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= articlesList[i].writer.name %></a>
+                    <%= moment(articlesList[i].publish_date).fromNow() %> , By <a class="author_name" href="<%= articlesList[i].writer.profile_uri %>"><%= articlesList[i].writer.name %></a>
                 </div>				
             </div>
             <% } %>
