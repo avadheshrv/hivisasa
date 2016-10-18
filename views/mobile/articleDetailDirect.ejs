@@ -1,0 +1,188 @@
+<% layout('../layout_Mobile') -%>
+
+<div class="container main-container mobile-content-wrapper">
+    <div class="row article-row">
+        <div class="col-md-11">
+
+            <div class="page-header hidden-xs">
+                <h4 class="page-title crime-title">
+                    <%= category %>
+                </h4>
+            </div>
+
+            <article id="article-173632" class="single-post" itemscope="" itemtype="http://schema.org/NewsArticle">
+                <meta itemprop="articleSection" content="Crime">
+                <h1 class="post-title" itemprop="headline"><%= articleDetail.title %></h1>
+
+                <div class="row">
+                    <div class="article-byline">
+                        <span class="post-date" itemprop="datePublished"><%= moment(articleDetail.publish_date).format('D MMM YYYY h:mm A')  %>,</span>
+                        <span class="byline"> By <span class="post-author">
+                                <a href="articleDetail.writer.profile_uri" itemprop="author"><%= articleDetail.writer.name %> </a></span></span>
+                    </div>
+                </div>
+
+                <ul class="social-share-btns">
+
+                    <li class="facebook">
+                        <a href="#">				
+                            <span class="share-text">Facebook</span>
+                        </a>
+                    </li><!--
+            
+            
+                    --><li class="twitter">
+                        <a href="#">
+                            <span class="share-text">Twitter</span>
+                        </a>
+                    </li>
+
+                    <li class="whatsapp">
+                        <a href="#">
+                            <span class="share-text">Whatsapp</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+                <div class="row photo-row">
+                    <div class="col-md-16">
+                        <img src="<%= mediaBaseUrl+articleDetail.image_uri %>" class="img-responsive" itemprop="image">
+
+
+                        
+                    </div>
+                </div>
+                <div class="post-content" itemprop="articleBody">
+                    <%- articleDetail.body %>
+                </div>
+            </article>
+
+            <button class="btn btn-xs btn-link" id="report-this" data-toggle="modal" data-target="#retraction"> Report Story </button>
+
+
+
+        </div>
+
+        <div class="col-md-5">
+            <div class="sidebar" ng-controller="ArticleWorkbenchController">
+
+                <div class="page-header section-header">
+                    <h4 class="page-title">
+                        MOST READ STORIES
+                    </h4>
+                </div>
+
+                <div class="row most-read-row">
+                    <div class="post-preview">
+                        <span class="post-date">08 Oct 2016 2:28 PM</span>
+                        <h5 class="post-title">
+                            <a href="http://www.hivisasa.com/machakos/politics/173309?source=top_story">I would rather go home than become “mere foreign affairs CS” - Kalonzo</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">08 Oct 2016 12:00 AM</span>
+                        <h5 class="post-title">
+                            <a href="http://www.hivisasa.com/kiambu/politics/172964?source=top_story">Is Kalonzo the next Foreign Affairs CS if Amina Mohammed becomes AU Secretary General?</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">08 Oct 2016 11:38 AM</span>
+                        <h5 class="post-title">
+                            <a href="http://www.hivisasa.com/uasin-gishu/politics/173193?source=top_story">Former MP to spend weekend behind bars</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">08 Oct 2016 1:57 PM</span>
+                        <h5 class="post-title">
+                            <a href="http://www.hivisasa.com/machakos/news/173302?source=top_story">Jackline Mwende gets new hands</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">07 Oct 2016 12:09 PM</span>
+                        <h5 class="post-title">
+                            <a href="http://www.hivisasa.com/nyamira/politics/172878?source=top_story">Governor Ruto labels Laboso Jubilee project</a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="follow_on_fb" style="margin-bottom: 15px;margin-bottom: 15px;">
+                    <div class="fb-page" data-href="https://www.facebook.com/HiviSasa" data-width="380" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"></div>
+
+                </div>
+
+                <div class="page-header section-header">
+                    <h4 class="page-title">
+                        LATEST IN NATIONAL
+                    </h4>
+                </div>
+
+                <div class="row most-read-row">
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 3:51 PM</span>
+                        <h5 class="post-title">
+                            <a href="/national/politics/173635?source=latest_story">Maasai leaders threaten to ditch ODM if Magelo is impeached</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 3:53 PM</span>
+                        <h5 class="post-title">
+                            <a href="/national/crime/173632?source=latest_story">Woman to hang for selling killer brew</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 2:18 PM</span>
+                        <h5 class="post-title">
+                            <a href="/national/news/173615?source=latest_story">Philomena Mbete Mwilu nominated for Deputy CJ</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 12:30 PM</span>
+                        <h5 class="post-title">
+                            <a href="/national/education/173575?source=latest_story">Kibabii University closed down</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 11:11 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/entertainment/173533?source=latest_story">Churchill to host a presidential debate</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 11:39 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/politics/173530?source=latest_story">Mudavadi confirms talks with Raila to form 'super alliance'</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 10:24 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/politics/173528?source=latest_story">I’ll work with Cord to remove Jubilee from power &ndash; Mudavadi</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 11:40 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/politics/173522?source=latest_story">Kalonzo given ultimatum to unite Ukambani</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 9:48 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/sports/173515?source=latest_story">Kenyans reign in Chicago</a>
+                        </h5>
+                    </div>
+                    <div class="post-preview">
+                        <span class="post-date">10 Oct 2016 10:43 AM</span>
+                        <h5 class="post-title">
+                            <a href="/national/news/173507?source=latest_story">Ruto calls on politicians to shun divisive politics</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!--end sidebar-->
+        </div>
+    </div>
+</div>
