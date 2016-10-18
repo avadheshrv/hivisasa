@@ -18,7 +18,7 @@
                     <div class="article-byline">
                         <span class="post-date" itemprop="datePublished"><%= moment(articleDetail.publish_date).format('D MMM YYYY h:mm A')  %>,</span>
                         <span class="byline"> By <span class="post-author">
-                                <a href="articleDetail.writer.profile_uri" itemprop="author"><%= articleDetail.writer.name %> </a></span></span>
+                                <a href="<%= articleDetail.writer.profile_uri %>" itemprop="author"><%= articleDetail.writer.name %> </a></span></span>
                     </div>
                 </div>
 
