@@ -1,0 +1,400 @@
+<% layout('layoutDesktop') -%>
+<div class="wrap wrap_main_content">
+    <div class="inner-wrap block_with_extra_info_on_left_side">
+        <div class="left_block_with_article">
+            <div class="article_content">			
+                <div class="article">
+                        <div class="topic_article"><%= category %></div>
+                        <div class="title_article"><%- articleDetail.title %></div>
+                        <div class="time_autor_of_article">   
+                            <%= moment(articleDetail.publish_date).format('Do MMMM, YYYY'); %> , By <a class="author_name" href="here_place_link_to_author"><%= articleDetail.writer.name %></a>
+                        </div>	
+                        <div class="article_body">
+                                <div class="socials_icons">
+                                        <div class="social_icon" id="facebook_icon">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="social_icon" id="twitter_icon">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="social_icon" id="mail_icon">
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        </div>
+                                </div>
+                            
+                                <div class="place_big_image_article" style="background:url('<%= apiImgUrlPath+articleDetail.image_uri %>');">
+                                </div>
+                                <div class="small_text_under_main_picture">
+                                        Mbunge wa Lamu Magharibi Julius Ndegwa. Kesi ya ufisadi inayomkabili imeahirishwa mpaka Januari 14, 2016. [the-star/the-star.co.ke]
+                                </div>
+                                <div class="text_article">
+                                    <%- articleDetail.body %>
+                                </div>
+
+                                <div class="socials_icons">
+                                        <div class="social_icon" id="facebook_icon">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="social_icon" id="twitter_icon">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="social_icon" id="mail_icon">
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        </div>
+                                </div>
+                                <a href="">
+                                        <div class="text_report_story">
+                                                Report Story
+                                        </div>
+                                </a>
+                        </div>
+                </div>	
+            </div>
+            <% if(relatedArticles.length > 0){ %>
+            <div class="more_in_crime_three_text_news_block">
+                <div class="topic_article">RELATED STORIES</div>
+                <div class="three_related_news_block">
+                    <% for(var i = 0; i <= 2; i++){ %>
+                    <div class="middle_news_block_related_article">
+                        <a href="/article/<%= county %>/<%= category %>/<%= relatedArticles[i].nid %>">
+                            <div class="img_middle_size_article_related" style="background-image: url('<%= apiImgUrlPath+relatedArticles[i].image_uri %>');">
+                            </div>
+                            <div class="title_news_related_article"><%- relatedArticles[i].title %> »</div>
+                        </a>			
+                    </div>
+                    <% } %>
+                </div>
+                <% if(relatedArticles.length > 3 ){ %>
+                <div class="three_related_news_block">
+                    <% for(var i = 3; i <= 5; i++){ %>
+                    <div class="middle_news_block_related_article">
+                        <a href="/article/<%= county %>/<%= category %>/<%= relatedArticles[i].nid %>">
+                            <div class="img_middle_size_article_related" style="background-image: url('<%= apiImgUrlPath+relatedArticles[i].image_uri %>');">
+                            </div>
+                            <div class="title_news_related_article"><%- relatedArticles[i].title %> »</div>
+                        </a>		
+                    </div>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+            <div class="more_in_crime_three_text_news_block">
+                <div class="topic_article">
+                        More In Crime
+                </div>
+                <div class="three_text_news_block">
+                    <a href="" class="text_news_block">
+                                    Police urged to inspect traders to nab those indulging in illegal businesses along Lamu »
+                    </a>
+
+                    <a href="" class="text_news_block">
+                                    Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
+                    </a>
+
+                    <a href="" class="text_news_block">
+                                    Viongozi wa siasa Pwani wataka kuwa na chama kimoja »
+                    </a>
+                </div>
+            </div>
+
+                <div class="full_size_news_on_right">
+                        <div class="title_full_size_news_on_right">
+                                Recent News
+                        </div>
+                        <div class="body_full_size_news_on_right">
+
+                                <a href="">
+                                        <div class="one_news_small_news">
+                                                <div class="img_small_news" style="background: url('img/news12.jpg');">
+                                                </div>
+                                                <div class="small_news_info">
+                                                        <div class="date_small_news">
+                                                                30 Nov 3:43 PM
+                                                        </div>
+                                                        <div class="title_small_news">
+                                                                Police urged to inspect traders to nab those indulging in illegal businesses along Lamu »
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>
+
+
+                                <a href="">
+                                        <div class="one_news_small_news">
+                                                <div class="img_small_news" style="background: url('img/news12.jpg');">
+                                                </div>
+                                                <div class="small_news_info">
+                                                        <div class="date_small_news">
+                                                                30 Nov 3:43 PM
+                                                        </div>
+                                                        <div class="title_small_news">
+                                                                Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>
+
+                                <a href="">
+                                        <div class="one_news_small_news">
+                                                <div class="img_small_news" style="background: url('img/news12.jpg');">
+                                                </div>
+                                                <div class="small_news_info">
+                                                        <div class="date_small_news">
+                                                                30 Nov 3:43 PM
+                                                        </div>
+                                                        <div class="title_small_news">
+                                                                Police urged to inspect traders to nab those indulging in illegal businesses along Lamu »
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>						
+
+                                <a href="">
+                                        <div class="one_news_small_news">
+                                                <div class="img_small_news" style="background: url('img/news12.jpg');">
+                                                </div>
+                                                <div class="small_news_info">
+                                                        <div class="date_small_news">
+                                                                30 Nov 3:43 PM
+                                                        </div>
+                                                        <div class="title_small_news">
+                                                                Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>
+
+                                <a href="">
+                                        <div class="one_news_small_news">
+                                                <div class="img_small_news" style="background: url('img/news12.jpg');">
+                                                </div>
+                                                <div class="small_news_info">
+                                                        <div class="date_small_news">
+                                                                30 Nov 3:43 PM
+                                                        </div>
+                                                        <div class="title_small_news">
+                                                                Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </a>
+
+                                <a href="">
+                                        <div class="text_all_politics">
+                                                All News »
+                                        </div>
+                                </a>
+
+                        </div>
+                </div>	
+        </div>
+        <div class="extra_left_side_info">
+        <!-- About author block -->
+                <div class="block_top_writer">
+                        <div class="title_block_top_writer">
+                                Top writer
+                        </div>
+                        <div class="main_info_author">
+                                <div class="qual_stories">
+                                        <div class="title_stories">
+                                                Stories
+                                        </div>
+                                        <div class="number_stories">
+                                                122
+                                        </div>
+                                </div>
+
+                                <div class="info_about_the_author">
+                                        <div class="name_author">
+                                                Osman Suleiman
+                                        </div>
+                                        <div class="date_registration">
+                                                Since Oct 2015
+                                        </div>
+
+                                        <div class="stars_rating">
+                                                <div class="star_rate star_active"></div>
+                                                <div class="star_rate star_active"></div>
+                                                <div class="star_rate star_active"></div>
+                                                <div class="star_rate star_active"></div>
+                                                <div class="star_rate star_not_active"></div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="text_for_authors">
+                                Anyone can write for us. We pay you weekly for each story we publish
+                        </div>
+                        <a href="">
+                                <div class="bnt_write_us">
+                                        Write for us!
+                                </div>
+                        </a>
+                </div>
+        <!-- End of the About author block -->
+        <!-- Latest forum posts -->
+                <div class="block_latest_forum_posts">
+                        <div class="title_ltst_forum_posts">
+                                Latest Forum Post
+                        </div>
+                        <div class="name_of_post_author">
+                                Ian Madege
+                        </div>
+                        <div class="topic_of_the_post">
+                                What do think about the upcoming hivisasa academy?
+                        </div>
+                        <div class="reply_box">
+                                <div class="text_reply">
+                                        Following the academy can make you a better journalist and also earn extra cash!
+                                </div>
+                                <div class="name_of_replier">
+                                        Martin Kamau
+                                </div>
+                                <div class="num_comments">
+                                        8 Comments
+                                </div>
+                                <a href="">
+                                        <div class="btn_reply">
+                                                Reply
+                                        </div>
+                                </a>
+                        </div>
+                </div>
+        <!-- End of Latest forum posts -->
+        <!-- Block Events -->
+            <div class="events_block">
+                    <div class="title_events_block">
+                            Events
+                    </div>
+                    <div class="events_body">
+                            <!--Block fo one event-->
+                            <div class="one_event">
+                                    <div class="date_of_event">
+                                            <div class="month_of_event">
+                                                    dec
+                                            </div>								
+                                            <div class="day_of_event">
+                                                    5
+                                            </div>
+
+                                    </div>
+
+                                    <div class="event_data">
+                                            <div class="title_event">
+                                                    The Afternoon Soiree
+                                            </div>
+                                            <div class="place_event">
+                                                    The Edge Bar
+                                            </div>
+                                    </div>
+                            </div>
+                            <!--End of the block for one ebent-->
+                            <div class="one_event">
+                                    <div class="date_of_event">
+                                            <div class="month_of_event">
+                                                    dec
+                                            </div>								
+                                            <div class="day_of_event">
+                                                    11
+                                            </div>
+
+                                    </div>
+
+                                    <div class="event_data">
+                                            <div class="title_event">
+                                                    The Youth Mentorship Summit
+                                            </div>
+                                            <div class="place_event">
+                                                    Oshwal Academy Mombasa
+                                            </div>
+                                    </div>
+                            </div>
+
+                            <div class="one_event">
+                                    <div class="date_of_event">
+                                            <div class="month_of_event">
+                                                    dec
+                                            </div>								
+                                            <div class="day_of_event">
+                                                    11
+                                            </div>
+
+                                    </div>
+
+                                    <div class="event_data">
+                                            <div class="title_event">
+                                                    Jamuhuri Day Fiesta
+                                            </div>
+                                            <div class="place_event">
+                                                    Bidi Badu Diani
+                                            </div>
+                                    </div>
+                            </div>
+
+                            <div class="one_event">
+                                    <div class="date_of_event">
+                                            <div class="month_of_event">
+                                                    dec
+                                            </div>								
+                                            <div class="day_of_event">
+                                                    14
+                                            </div>
+
+                                    </div>
+
+                                    <div class="event_data">
+                                            <div class="title_event">
+                                                    The Big Reveal
+                                            </div>
+                                            <div class="place_event">
+                                                    Flamingo Beach Resort & Spa
+                                            </div>
+                                    </div>
+                            </div>
+                            <a href="">
+                                    <div class="btn_ads_your_event">
+                                            Advertise your event
+                                    </div>
+                            </a>
+
+                    </div>
+            </div>
+        <!--End of Events block-->
+        <!--Top news block-->
+        <% include partial/sidebarTopNews.ejs %>
+        <!--End of Top News block-->
+        <!--Block for moderators-->
+            <div class="top_new_narrow_block">
+                    <div class="title_full_size_news_on_right">
+                            Workbench
+                    </div>
+                    <div class="btns_moderator">
+                            <a class="btn_edit btn_moderator" href="">Edit</a>
+                            <a class="btn_unpublish btn_moderator" href="">Unpublish</a>
+                    </div>
+                    <div class="counters_socials">
+                            <div class="social_name">
+                                    Facebook <span class="counter">0</span>
+                            </div>
+                            <div>
+                                    This indicates the number of times the article has been shared on facebook
+                            </div>
+                    </div>
+
+                    <div class="counters_socials">
+                            <div class="social_name">
+                                    Total Pageviews <span class="counter">0</span>
+                            </div>
+                            <div>
+                                    This indicates the number of times the article has been read
+                            </div>
+                    </div>
+
+                    <div class="btn_update_now">
+                            Update now
+                    </div>
+
+            </div>
+        </div>			
+    </div>		
+</div>    

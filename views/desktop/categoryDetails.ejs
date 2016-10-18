@@ -1,0 +1,217 @@
+<% layout('layout') -%>
+
+<div class="wrap wrap_main_content">
+
+    <div class="inner-wrap">
+
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#"><%= county %></a></li>
+            <li><a href="#"><%= category %></a></li>
+        </ul>
+
+    </div>
+
+    <div class="inner-wrap news_topic_section">
+        <%= category %>		
+    </div>
+
+    <div class="inner-wrap" style="font-size: 0;">
+        <div class="left_block_bigger_news">			
+
+            <div class="three_line_news_block" style="margin-top: 0px;">
+
+                <%  if(categoryDetail.length > 0){ %>
+
+                <% if(categoryDetail[0]){ %>
+
+                <div class="middle_news_block">
+                    <a href="/article/<%= county %>/<%= category %>/<%= categoryDetail[0].nid %>"> 
+                    
+                        <div class="img_middle_size_news" style="background-image: url('<%= mediaBaseUrl+categoryDetail[0].image_uri %>');">
+                        </div>
+                        <div class="title_news title_for_middle_size_news">
+                            <%= categoryDetail[0].title %>
+                        </div>
+                    </a>
+
+                    <div class="time_autor_of_article">
+                        <%= moment(categoryDetail[0].publish_date).fromNow(); %> , By <a class="author_name" href="#"><%= categoryDetail[0].writer.name %></a>
+                    </div>				
+                </div>
+                <% } %>
+
+                <% if(categoryDetail[1]){ %>
+
+                <div class="middle_news_block">
+                    <a href="/article/<%= county %>/<%= category %>/<%= categoryDetail[1].nid %>"> 
+                        <div class="img_middle_size_news" style="background-image: url('<%= mediaBaseUrl+categoryDetail[1].image_uri %>');">
+                        </div>
+                        <div class="title_news title_for_middle_size_news">
+                            <%= categoryDetail[1].title %>
+                        </div>
+                    </a>
+
+                    <div class="time_autor_of_article">
+                        <%= moment(categoryDetail[1].publish_date).fromNow(); %> , By <a class="author_name" href="#"><%= categoryDetail[1].writer.name %></a>
+                    </div>				
+                </div>
+                <% } %>
+
+
+                <% } %>
+            </div>
+
+
+            <div class="full_size_news_on_right">
+                <div class="title_full_size_news_on_right">
+                    featured news
+                </div>
+                <div class="body_full_size_news_on_right">
+
+                    <%  if(categoryDetail.length > 0){ %>
+
+                    <% for(i = 2; i < categoryDetail.length; i++){ %>
+                    <a href="/article/<%= county %>/<%= category %>/<%= categoryDetail[i].nid %>"> 
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('<%= mediaBaseUrl+categoryDetail[i].image_uri %>');">
+                            </div>
+                            <div class="small_news_info">
+                                <div class="date_small_news">
+                                   <%= moment(categoryDetail[i].publish_date).format('D MMM h:mm A'); %>
+                                </div>
+                                <div class="title_small_news">
+                                    <%= categoryDetail[i].title %>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <% } %>
+                    <% } %>
+
+
+                    <div class="center pagination">
+                        <ul class="pagination">
+                            <li><a class="" href="#">«</a></li>
+                            <li><a class="active" href="#">1</a></li>
+                            <li><a class="" href="#">2</a></li>
+                            <li><a class="" href="#">3</a></li>
+                            <li><a class="" href="#">4</a></li>
+                            <li><a class="" href="#">5</a></li>
+                            <li><a class="" href="#">6</a></li>
+                            <li><a class="" href="#">7</a></li>
+                            <li><a class="" href="#">»</a></li>
+                        </ul>
+                    </div>
+
+
+                    <a href="">
+                        <div class="text_all_politics">
+                            All News »
+                        </div>
+                    </a>
+
+                </div>
+            </div>	
+
+        </div>
+
+        <div class="extra_left_side_info">
+            <!--Top news block-->
+            <div class="top_new_narrow_block_section">
+                <div class="title_full_size_news_on_right">
+                    Top News
+                </div>
+                <div class="tiny_images_content">					
+                    <a href="">					
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('img/news12.jpg');">
+                            </div>								
+                            <div class="tiny_news_info">
+                                <div class="date_small_news">
+                                    30 Nov 3:43 PM
+                                </div>
+                                <div class="title_tiny_news">
+                                    Police urged to inspect traders to nab those indulging in illegal businesses along Lamu »
+                                </div>
+                            </div>								
+                        </div>						
+                    </a>		
+
+                    <a href="">					
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('img/news12.jpg');">
+                            </div>								
+                            <div class="tiny_news_info">
+                                <div class="date_small_news">
+                                    30 Nov 3:43 PM
+                                </div>
+                                <div class="title_tiny_news">
+                                    Mwanamume afikishwa mahakamani kwa madai ya kuiba Sh487,000 »
+                                </div>
+                            </div>								
+                        </div>						
+                    </a>	
+
+                    <a href="">					
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('img/news12.jpg');">
+                            </div>								
+                            <div class="tiny_news_info">
+                                <div class="date_small_news">
+                                    30 Nov 3:43 PM
+                                </div>
+                                <div class="title_tiny_news">
+                                    Families affected by road construction to receive compensation »
+                                </div>
+                            </div>								
+                        </div>						
+                    </a>	
+
+                    <a href="">					
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('img/news12.jpg');">
+                            </div>								
+                            <div class="tiny_news_info">
+                                <div class="date_small_news">
+                                    30 Nov 3:43 PM
+                                </div>
+                                <div class="title_tiny_news">
+                                    Ujenzi wa barabara katika shamba la Waitiki kuhamisha baadhi ya wakazi »
+                                </div>
+                            </div>								
+                        </div>						
+                    </a>	
+
+                    <a href="">					
+                        <div class="one_news_small_news">
+                            <div class="img_small_news" style="background: url('img/news12.jpg');">
+                            </div>								
+                            <div class="tiny_news_info">
+                                <div class="date_small_news">
+                                    30 Nov 3:43 PM
+                                </div>
+                                <div class="title_tiny_news">
+                                    Tuktuk moja yasakwa mjini Mombasa baada ya kuhusishwa na uhalifu »
+                                </div>
+                            </div>								
+                        </div>						
+                    </a>
+
+                    <a href="">
+                        <div class="text_all_politics">
+                            More news »
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+            <!--End of Top News block-->
+        </div>
+
+
+
+    </div>
+
+</div>
