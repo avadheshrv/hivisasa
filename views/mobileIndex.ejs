@@ -1,0 +1,28 @@
+<% layout('layout_Mobile') -%>
+
+<ul class="landing-page-nav">
+    <li><a href="?option=top" class="inactive">Top</a></li>
+    <li><a href="?option=recent" class="inactive">Recent</a></li>
+    <li><a href="?option=opinion" class="active">Opinions</a></li>
+</ul>
+
+
+<div class="container article-feed-container">
+
+    <div class="row most-read-row">
+
+        <% if(countyDetail.length > 0) {
+        for(var i = 0; i< countyDetail.length; i++) { %>
+        <div class="post-preview">
+            <span class="post-date"><%= moment(countyDetail[i].publish_date).format('D MMM YYYY h:mm A')  %></span>
+            <h5 class="post-title">
+                <a href="/national/crime/173632"><%= countyDetail[i].title %></a>
+            </h5>
+        </div>
+        <% } 
+        } else { %>
+        <div class="record-not-found">Not Found</div>
+        <% } %>
+
+    </div>
+</div>
