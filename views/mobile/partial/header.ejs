@@ -1,77 +1,155 @@
-<div class="wrap default" id="nav_inner_wrap">
-    <div class="inner-wrap bottom_block_with_search">		
-            <div class="logo">
-                <a href="/"><img src="/img/logo.png"></a>
-            </div>
-            <div class="dropdown">
-                <select name="county" class="dropdown_list county_selector">
-                    <option value="">Select county</option>
-                    <option value="national">National</option>
-                    <option value="garissa">Garissa</option>
-                    <option value="kiambu">Kiambu</option>
-                    <option value="kibera">Kibera</option>
-                    <option value="kisii">Kisii</option>
-                    <option value="kisumu">Kisumu</option>
-                    <option value="machakos">Machakos</option>
-                    <option value="mombasa">Mombasa</option>
-                    <option value="nakuru"> Nakuru</option>
-                    <option value="nyamira">Nyamira</option>
-                    <option value="uasin-gishu">Uasin-Gishu</option>
-                </select>
-            </div>
-            <div class="btn_search">
-                <i class="fa fa-search" aria-hidden="true"  id="btn_search_on_phrase"></i>				
-            </div>
-            <a href="" class="btn_write_for_us">
-                <div class="">
-                        write for us!
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="top-nav-desktop hidden-xs row">
+            <div class="container">
+                <div class="row">
+                    <div class="pull-left col-lg-3 col-sm-4">
+                        <a href="/" class="logo"><img src="img/logo.png" alt="Logo"></a>
+                    </div>
+                    <div class="pull-left col-lg-4 col-sm-5">
+                        <form id="county" action="/mobile" method="post" class="form-horizontal select-county select-county-mobile">
+    <div class="form-group input-group">
+        
+        
+        <select id="county_dropdown" name="county" class="form-control">
+            <option value="" >Select a location</option>
+            <option value="national" <% if(county === 'national') { %>  selected <% } %>>National</option>
+            <option value="garissa" <% if(county === 'garissa') { %>  selected <% } %>>Garissa</option>
+            <option value="kiambu" <% if(county === 'kiambu') { %>  selected <% } %>>Kiambu</option>
+            <option value="kibera" <% if(county === 'kibera') { %>  selected <% } %>>Kibera</option>
+            <option value="kisii" <% if(county === 'kisii') { %>  selected <% } %>>Kisii</option>
+            <option value="kisumu" <% if(county === 'kisumu') { %>  selected <% } %>>Kisumu</option>
+            <option value="machakos" <% if(county === 'machakos') { %>  selected <% } %>>Machakos</option>
+            <option value="mombasa" <% if(county === 'mombasa') { %>  selected <% } %>>Mombasa</option>
+            <option value="nakuru" <% if(county === 'nakuru') { %>  selected <% } %>> Nakuru</option>
+            <option value="nyamira" <% if(county === 'nyamira') { %>  selected <% } %>>Nyamira</option>
+            <option value="uasin-gishu" <% if(county === 'uasin-gishu') { %>  selected <% } %>>Uasin-Gishu</option>
+        </select>
+        <span class="input-group-addon" data-form="county" id="basic-addon1"><button type="submit" class="btn">GO</button></span>
+    </div>
+</form>                    </div>
+                    <div class="pull-right col-lg-2 col-sm-3 nav-action-button">
+                                                    <a href="/login">Log in</a>
+                                            </div>
+                    <div class="pull-right col-lg-2 col-sm-3 nav-action-button">
+                        <a href="/articles/new" class="write-for-us">Write for us</a>
+                    </div>
                 </div>
-            </a>
-            <a href="" class="btn_login">
-                <div class="">
-                        log in
-                </div>
-            </a>
-    </div>
-    <div class="inner-wrap search_tool_pad">
-        <form>
-            <input class="search_input" placeholder="Search term.."></input>
-            <button class="btn_go_search">Search</button>
-        </form>			
-    </div>
-</div>
-<div class="wrap news_name_and_date">
-    <div class="inner-wrap">
-        <% if( county != undefined && county != "" ){ %>
-        <div class="news_name">
-            <%= county %> <span class="name_news_blue_color">news</span>
-        </div>
-        <% } %>
-        <div class="todays_date">
-                Monday, 21 December
-        </div>
-    </div>
-    <div class="clear">
-    </div>
-</div>
-<div class="wrap wrap_nav_topics">
-    <div class="inner-wrap" style="overflow: visible;">
-        <a href=""><div class="nav_item">All news</div></a>
-        <a href=""><div class="nav_item">Politics</div></a>
-        <a href=""><div class="nav_item">Opinions</div></a>
-        <a href=""><div class="nav_item">Business</div></a>
-        <a href=""><div class="nav_item">Agriculture</div></a>
-        <a href=""><div class="nav_item">Crime</div></a>
-        <a href=""><div class="nav_item">Sports</div></a>
-        <a href=""><div class="nav_item">Entertainment</div></a>
-        <a href=""><div class="nav_item">Events</div></a>
-        <div class="nav_item nav_item_nav" id="open_more_items">More <span class="caret"></span>
-            <div class="li_more">		
-                <a href=""><div class="item_li_more">Education</div></a>
-                <a href=""><div class="item_li_more">Environment</div></a>
-                <a href=""><div class="item_li_more">Transport</div></a>
-                <a href=""><div class="item_li_more">Health</div></a>
             </div>
         </div>
-    </div>		
+
+        <div class="bottom-nav-desktop hidden-xs row">
+            <div class="page-name-and-time">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <div class="page-name">    <a class="location" href="/mobile/<%= county %>"><%= county %></a><a class="category" href="/national">news</a>
 </div>
+                            </div>
+
+                            <div class="pull-right col-md-4 col-sm-4 col-lg-4 white todays-date">
+                                Monday, 10 October
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row page-menu">
+                    <ul class="col-lg-16 col-md-16 col-sm-16">
+                        <li><a href="/national"> All News</a></li>
+                        <li><a href="/national/politics">Politics</a></li>
+                        <li><a href="/national/opinion">Opinions</a></li>
+                        <li><a href="/national/business">Business</a></li>
+                        <li><a href="/national/agriculture">Agriculture</a></li>
+                        <li><a href="/national/crime">Crime</a></li>
+                        <li><a href="/national/sports">Sports</a></li>
+                        <li><a href="/national/entertainment">Entertainment</a></li>
+                        <li><a href="http://events.hivisasa.com/national/events">Events</a></li>
+                        <li id="more_menu_items">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    More
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="/national/education">Education</a></li>
+                                    <li><a href="/national/environment">Environment</a></li>
+                                    <li><a href="/national/transport">Transport</a></li>
+                                    <li><a href="/national/health">Health</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header visible-xs">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="img/appicon.png" alt="Logo"></a>
+            <div class="page-name">    <a class="location" href="/national">National</a><a class="category" href="/national">news</a>
+</div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <meta name="base_url" content="http://www.hivisasa.com">
+            <div class="mobile-menu visible-xs">
+                <div class="county-selector">
+                                        <h6>Location:</h6>
+                    <form id="county" action="http://www.hivisasa.com/county/select" method="post" class="form-horizontal select-county-mobile">
+                        <div class="form-group input-group">
+
+                            <select name="county" class="form-control">
+                                <option value="">Select a Location</option>
+                                <option value="national">National</option>
+                                <option value="garissa">Garissa</option>
+                                <option value="kiambu">Kiambu</option>
+                                <option value="kibera">Kibera</option>
+                                <option value="kisii">Kisii</option>
+                                <option value="kisumu">Kisumu</option>
+                                <option value="machakos">Machakos</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="nakuru"> Nakuru</option>
+                                <option value="nyamira">Nyamira</option>
+                                <option value="uasin-gishu">Uasin-Gishu</option>
+                            </select>
+                            <span class="input-group-addon" data-form="county" id="basic-addon1"><button type="submit" class="btn submit-county">GO</button></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="container menu">
+                    <ul>
+                        <li><a href="/national">NEWS</a></li>
+                        <li><a href="/national/politics">POLITICS</a></li>
+                        <li><a href="/national/opinion">OPINIONS</a></li>
+                        <li><a href="/national/business">BUSINESS</a></li>
+                        <li><a href="/national/agriculture">AGRICULTURE</a></li>
+                        <li><a href="/national/crime">CRIME</a></li>
+                        <li><a href="/national/sports">SPORTS</a></li>
+                        <li><a href="/national/entertainment">ENTERTAINMENT</a></li>
+                        <li><a href="/national/events">EVENTS</a></li>
+                        <li><a href="/national/education">EDUCATION</a></li>
+                        <li><a href="/national/environment">ENVIRONMENT</a></li>
+                        <li><a href="/national/transport">TRANSPORT</a></li>
+                        <li><a href="/national/health">HEALTH</a></li>
+                    </ul>
+                </div>
+                <div class="container menu-description">
+                    <p>Anyone can write for us. We pay weekly for each story we publish</p>
+                    <a class="btn" href="/articles/new">WRITE FOR US</a>
+                    <a href="/payments?utm_source=navbar%26utm_medium=mobile_browser%26utm_campaign=payment_campaign" class="payment_campaign">Stand to win KES 10,000 weekly and other cash prizes.Click here to learn more.</a>
+                </div>
+
+
+            </div>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
