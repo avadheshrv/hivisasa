@@ -1,0 +1,76 @@
+<div class="wrap wrap_footer">
+    <div class="inner-wrap">
+        <div class="little_footer_block">
+            <div class="title_footer_blocks">About</div>
+            Anyone can write for us. We pay you weekly for each story we publish.
+            <a href="">
+                <div class="btn_write_for_us_footer">write for us!</div>
+            </a>
+        </div>
+        <div class="bigger_footer_block">
+            <div class="title_footer_blocks">news Categories</div>
+            <div>
+                <div class="little_footer_block">
+                    <a href=""><div class="footer_nav_item">All news</div></a>
+                    <a href=""><div class="footer_nav_item">Politics</div></a>
+                    <a href=""><div class="footer_nav_item">Opinions</div></a>
+                    <a href=""><div class="footer_nav_item">Business</div></a>
+                    <a href=""><div class="footer_nav_item">Agriculture</div></a>
+                    <a href=""><div class="footer_nav_item">Crime</div></a>
+                </div>
+                <div class="little_footer_block" style="margin-left: 15px;">
+                    <a href=""><div class="footer_nav_item">Sports</div></a>
+                    <a href=""><div class="footer_nav_item">Entertainment</div></a>
+                    <a href=""><div class="footer_nav_item">Events</div></a>
+                    <a href=""><div class="footer_nav_item">Education</div></a>
+                    <a href=""><div class="footer_nav_item">Environment</div></a>
+                    <a href=""><div class="footer_nav_item">Transport</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="little_footer_block" style="margin-left: 15px;">
+            <div class="title_footer_blocks">Hot Forum Topics</div>
+            <a href=""><div class="footer_nav_item">#crime</div></a>
+            <a href=""><div class="footer_nav_item">#politics</div></a>
+            <a href=""><div class="footer_nav_item">#business</div></a>
+            <a href=""><div class="footer_nav_item">#sports</div></a>
+            <a href=""><div class="footer_nav_item">#transport</div></a>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.county_selector').change(function(){
+
+        var $county = $(this).val()
+        var base_url  = $('meta[name=base_url]').attr("content");
+        var full_base = base_url + $county
+        window.location.href = full_base
+
+    });
+    
+    document.body.onclick = function(e){
+        var elem = e ? e.target : window.event.srcElement;
+        if (elem.id == "btn_search_on_phrase"){
+                $(".btn_search").toggleClass("btn_search_active");			
+                $(".search_tool_pad").toggleClass("search_tool_pad_active");
+        }
+
+        if (elem.id == "open_more_items"){
+                $(".li_more").toggleClass("li_more_active");
+        }
+    }
+    $(function() {
+        var $menu = $("#nav_inner_wrap");
+        $(window).scroll(function(){
+            if ( $(this).scrollTop() > 5 && $menu.hasClass("default") ){
+                    $menu.removeClass("default").addClass("fixed");
+            } else if($(this).scrollTop() <= 5 && $menu.hasClass("fixed")) {
+                    $menu.removeClass("fixed").addClass("default");
+            }
+        });
+    });
+});
+</script>

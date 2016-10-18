@@ -1,0 +1,77 @@
+<div class="wrap default" id="nav_inner_wrap">
+    <div class="inner-wrap bottom_block_with_search">		
+            <div class="logo">
+                <a href="/"><img src="/img/logo.png"></a>
+            </div>
+            <div class="dropdown">
+                <select name="county" class="dropdown_list county_selector">
+                    <option value="">Select county</option>
+                    <option value="national">National</option>
+                    <option value="garissa">Garissa</option>
+                    <option value="kiambu">Kiambu</option>
+                    <option value="kibera">Kibera</option>
+                    <option value="kisii">Kisii</option>
+                    <option value="kisumu">Kisumu</option>
+                    <option value="machakos">Machakos</option>
+                    <option value="mombasa">Mombasa</option>
+                    <option value="nakuru"> Nakuru</option>
+                    <option value="nyamira">Nyamira</option>
+                    <option value="uasin-gishu">Uasin-Gishu</option>
+                </select>
+            </div>
+            <div class="btn_search">
+                <i class="fa fa-search" aria-hidden="true"  id="btn_search_on_phrase"></i>				
+            </div>
+            <a href="" class="btn_write_for_us">
+                <div class="">
+                        write for us!
+                </div>
+            </a>
+            <a href="" class="btn_login">
+                <div class="">
+                        log in
+                </div>
+            </a>
+    </div>
+    <div class="inner-wrap search_tool_pad">
+        <form>
+            <input class="search_input" placeholder="Search term.."></input>
+            <button class="btn_go_search">Search</button>
+        </form>			
+    </div>
+</div>
+<div class="wrap news_name_and_date">
+    <div class="inner-wrap">
+        <% if( county != undefined && county != "" ){ %>
+        <div class="news_name">
+            <%= county %> <span class="name_news_blue_color">news</span>
+        </div>
+        <% } %>
+        <div class="todays_date">
+                Monday, 21 December
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<div class="wrap wrap_nav_topics">
+    <div class="inner-wrap" style="overflow: visible;">
+        <a href=""><div class="nav_item">All news</div></a>
+        <a href=""><div class="nav_item">Politics</div></a>
+        <a href=""><div class="nav_item">Opinions</div></a>
+        <a href=""><div class="nav_item">Business</div></a>
+        <a href=""><div class="nav_item">Agriculture</div></a>
+        <a href=""><div class="nav_item">Crime</div></a>
+        <a href=""><div class="nav_item">Sports</div></a>
+        <a href=""><div class="nav_item">Entertainment</div></a>
+        <a href=""><div class="nav_item">Events</div></a>
+        <div class="nav_item nav_item_nav" id="open_more_items">More <span class="caret"></span>
+            <div class="li_more">		
+                <a href=""><div class="item_li_more">Education</div></a>
+                <a href=""><div class="item_li_more">Environment</div></a>
+                <a href=""><div class="item_li_more">Transport</div></a>
+                <a href=""><div class="item_li_more">Health</div></a>
+            </div>
+        </div>
+    </div>		
+</div>
