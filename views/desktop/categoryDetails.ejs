@@ -1,26 +1,18 @@
-<% layout('layout') -%>
-
+<% layout('../layoutDesktop') -%>
 <div class="wrap wrap_main_content">
-
     <div class="inner-wrap">
-
         <ul class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><a href="#"><%= county %></a></li>
+            <li><a href="/<%= county %>"><%= county %></a></li>
             <li><a href="#"><%= category %></a></li>
         </ul>
-
     </div>
-
     <div class="inner-wrap news_topic_section">
         <%= category %>		
     </div>
-
     <div class="inner-wrap" style="font-size: 0;">
         <div class="left_block_bigger_news">			
-
             <div class="three_line_news_block" style="margin-top: 0px;">
-
                 <%  if(categoryDetail.length > 0){ %>
 
                 <% if(categoryDetail[0]){ %>
@@ -36,7 +28,7 @@
                     </a>
 
                     <div class="time_autor_of_article">
-                        <%= moment(categoryDetail[0].publish_date).fromNow(); %> , By <a class="author_name" href="#"><%= categoryDetail[0].writer.name %></a>
+                        <%= moment(categoryDetail[0].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= categoryDetail[0].writer.name %></a>
                     </div>				
                 </div>
                 <% } %>
@@ -53,7 +45,7 @@
                     </a>
 
                     <div class="time_autor_of_article">
-                        <%= moment(categoryDetail[1].publish_date).fromNow(); %> , By <a class="author_name" href="#"><%= categoryDetail[1].writer.name %></a>
+                        <%= moment(categoryDetail[1].publish_date).fromNow() %> , By <a class="author_name" href="#"><%= categoryDetail[1].writer.name %></a>
                     </div>				
                 </div>
                 <% } %>
@@ -78,7 +70,7 @@
                             </div>
                             <div class="small_news_info">
                                 <div class="date_small_news">
-                                   <%= moment(categoryDetail[i].publish_date).format('D MMM h:mm A'); %>
+                                   <%= moment(categoryDetail[i].publish_date).format('D MMM h:mm A') %>
                                 </div>
                                 <div class="title_small_news">
                                     <%= categoryDetail[i].title %>
